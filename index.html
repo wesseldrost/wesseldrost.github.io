@@ -45,7 +45,7 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: yellow;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_sun.jpg') no-repeat center/cover;
             border-radius: 50%;
             top: 50%;
             left: 50%;
@@ -55,25 +55,64 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background: lightblue;
             border-radius: 50%;
+            background-size: cover;
+            background-position: center;
         }
         .planet1 {
             top: 50%;
-            left: 70%;
-            animation: orbit 20s linear infinite;
+            left: 60%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_mercury.jpg');
+            animation: orbit 40s linear infinite;
         }
         .planet2 {
+            top: 40%;
+            left: 70%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg');
+            animation: orbit 50s linear infinite;
+        }
+        .planet3 {
+            top: 60%;
+            left: 80%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg');
+            animation: orbit 60s linear infinite;
+        }
+        .planet4 {
             top: 30%;
-            left: 50%;
-            animation: orbit 30s linear infinite;
+            left: 90%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_mars.jpg');
+            animation: orbit 70s linear infinite;
+        }
+        .planet5 {
+            top: 70%;
+            left: 100%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg');
+            animation: orbit 80s linear infinite;
+        }
+        .planet6 {
+            top: 50%;
+            left: 110%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_saturn.jpg');
+            animation: orbit 90s linear infinite;
+        }
+        .planet7 {
+            top: 80%;
+            left: 120%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_uranus.jpg');
+            animation: orbit 100s linear infinite;
+        }
+        .planet8 {
+            top: 20%;
+            left: 130%;
+            background: url('https://www.solarsystemscope.com/textures/download/2k_neptune.jpg');
+            animation: orbit 110s linear infinite;
         }
         @keyframes orbit {
             0% {
-                transform: rotate(0deg) translateX(200px) rotate(0deg);
+                transform: rotate(0deg) translateX(300px) rotate(0deg);
             }
             100% {
-                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+                transform: rotate(360deg) translateX(300px) rotate(-360deg);
             }
         }
     </style>
@@ -83,6 +122,12 @@
         <div class="sun"></div>
         <div class="planet planet1"></div>
         <div class="planet planet2"></div>
+        <div class="planet planet3"></div>
+        <div class="planet planet4"></div>
+        <div class="planet planet5"></div>
+        <div class="planet planet6"></div>
+        <div class="planet planet7"></div>
+        <div class="planet planet8"></div>
     </div>
     <header>
         <h1>Welkom</h1>
@@ -102,7 +147,7 @@
     <script>
         document.querySelectorAll('.planet').forEach(planet => {
             planet.addEventListener('mouseover', () => {
-                planet.style.transform = 'scale(2)';
+                planet.style.transform = 'scale(1.5)';
                 planet.style.transition = 'transform 0.5s ease-in-out';
             });
             planet.addEventListener('mouseout', () => {
