@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binairstelsel</title>
+    <title>Website</title>
     <style>
         /* Basic reset */
         * {
@@ -109,30 +109,47 @@
 </head>
 <body>
     <header>
-        <h1>Binairstelsel</h1>
+        <h1>Welkom</h1>
     </header>
     <div class="container">
-        <section id="intro">
+        <section>
+            <h2>Over mij</h2>
+            <p>Ik ben Wessel.</p>
+            <p>Dit is mijn website voor mijn projecten.</p>
+        </section>
+        <section>
+            <h2>Mijn Projecten</h2>
+            <p>Dit is mijn pagina over <a href="projects.html">kleuren</a>.</p>
+            <p>Dit is mijn andere pagina over het <a href="binairstelsel.html">binair stelsel</a>. Neem een kijkje op deze pagina.</p>
+        </section>
+        <section>
+            <h2>Binairstelsel</h2>
             <h2>Wat is een Binairstelsel?</h2>
             <p>Het binaire stelsel is een wiskundig systeem dat alleen de cijfers 0 en 1 gebruikt. Het is de basis van alle moderne computer- en digitale systemen.</p>
-        </section>
-        <section id="example">
-            <iframe src="https://games.penjee.com/binary-bonanza/game.php" width="700" height="500" frameborder="no" scrolling="no" ></iframe>
+            <h2>Voorbeeld van Binaire Getallen</h2>
+            <div class="binary-example">
+                <div>0</div>
+                <div>1</div>
+                <div>10</div>
+                <div>11</div>
+                <div>100</div>
             </div>
-        </section>
-        <section id="code">
             <h2>Binaire Code Voorbeeld</h2>
             <div class="code-example">
                 <code>
                     0010 0100 0110 0001 0010 0001
                 </code>
             </div>
+            <div class="interactive-section">
+                <h2>Interactie: Converteer een Getal naar Binair</h2>
+                <input type="number" id="numberInput" placeholder="Voer een getal in">
+                <button onclick="convertToBinary()">Converteer</button>
+                <p id="binaryOutput"></p>
+            </div>
         </section>
-        <section id="interactive" class="interactive-section">
-            <h2>Zet een getal om naar binair</h2>
-            <input type="number" id="numberInput" placeholder="Voer een getal in">
-            <button onclick="convertToBinary()">omzetten</button>
-            <p id="binaryOutput"></p>
+        <section>
+            <h2>Speel een Binaire Game</h2>
+            <iframe src="https://games.penjee.com/binary-bonanza/game.php" width="700" height="500" frameborder="no" scrolling="no"></iframe>
         </section>
     </div>
     <footer>
@@ -142,10 +159,12 @@
         function convertToBinary() {
             const number = document.getElementById('numberInput').value;
             const binary = Number(number).toString(2);
-            document.getElementById('binaryOutput').innerText = `Binair getal: ${binary}`;
+            document.getElementById('binaryOutput').innerText = `Binaire weergave: ${binary}`;
         }
 
-       
+        document.querySelectorAll('.binary-example div').forEach(element => {
+            element.addEventListener('click', () => {
+                alert(`Je hebt op ${element.innerText} geklikt`);
             });
         });
     </script>
