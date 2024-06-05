@@ -1,13 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-  <title> binairstelsel </title>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binairstelsel</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .binary-example {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .binary-example div {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .binary-example div:hover {
+            transform: scale(1.1);
+        }
+
+        .code-example {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .code-example::before {
+            content: "Code Voorbeeld";
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .interactive-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .interactive-section button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .interactive-section button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Binairstelsel</h1>
+    </header>
+    <div class="container">
+        <section id="intro">
+            <h2>Wat is een Binairstelsel?</h2>
+            <p>Het binaire stelsel is een wiskundig systeem dat alleen de cijfers 0 en 1 gebruikt. Het is de basis van alle moderne computer- en digitale systemen.</p>
+        </section>
+        <section id="example">
+            <h2>Voorbeeld van Binaire Getallen</h2>
+            <div class="binary-example">
+                <div>0</div>
+                <div>1</div>
+                <div>10</div>
+                <div>11</div>
+                <div>100</div>
+            </div>
+        </section>
+        <section id="code">
+            <h2>Binaire Code Voorbeeld</h2>
+            <div class="code-example">
+                <code>
+                    0010 0100 0110 0001 0010 0001
+                </code>
+            </div>
+        </section>
+        <section id="interactive" class="interactive-section">
+            <h2>Interactie: Converteer een Getal naar Binair</h2>
+            <input type="number" id="numberInput" placeholder="Voer een getal in">
+            <button onclick="convertToBinary()">Converteer</button>
+            <p id="binaryOutput"></p>
+        </section>
+    </div>
+    <footer>
+        <p><a href="index.html">Home</a></p>
+    </footer>
+    <script>
+        function convertToBinary() {
+            const number = document.getElementById('numberInput').value;
+            const binary = Number(number).toString(2);
+            document.getElementById('binaryOutput').innerText = `Binaire weergave: ${binary}`;
+        }
 
-<h1>binairstelsel</h1>
-<p>binairstelsel</p>
-<a href="index.html">home</a>
+        document.querySelectorAll('.binary-example div').forEach(element => {
+            element.addEventListener('click', () => {
+                alert(`Je hebt op ${element.innerText} geklikt`);
+            });
+        });
+    </script>
 </body>
 </html>
