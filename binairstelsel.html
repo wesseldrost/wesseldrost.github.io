@@ -144,12 +144,12 @@
             <div class="interactive-section">
                 <h2>Interactie: Converteer een Getal naar Binair</h2>
                 <input type="number" id="numberInput" placeholder="Voer een getal in">
-                <button onclick="convertToBinary()">Converteer</button>
+                <button onclick="convertToBinary()">Omzetten</button>
                 <p id="binaryOutput"></p>
             </div>
         </section>
         <section>
-            <h2>Speel een Binaire Game</h2>
+            <h2>Binaire Game</h2>
             <iframe src="https://games.penjee.com/binary-bonanza/game.php" width="700" height="500" frameborder="no" scrolling="no"></iframe>
         </section>
     </div>
@@ -160,7 +160,7 @@
         function convertToBinary() {
             const number = document.getElementById('numberInput').value;
             const binary = Number(number).toString(2);
-            document.getElementById('binaryOutput').innerText = `Binaire weergave: ${binary}`;
+            document.getElementById('binaryOutput').innerText = `Binair: ${binary}`;
         }
 
         document.querySelectorAll('.binary-example div').forEach(element => {
