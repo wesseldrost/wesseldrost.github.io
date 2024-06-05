@@ -117,7 +117,7 @@
             <p>Het binaire stelsel is een wiskundig systeem dat alleen de cijfers 0 en 1 gebruikt. Het is de basis van alle moderne computer- en digitale systemen.</p>
         </section>
         <section id="example">
-            <h2>Voorbeeld van Binaire Getallen</h2>
+            <h2>Voorbeelden van Binaire Getallen</h2>
             <div class="binary-example">
                 <div>0</div>
                 <div>1</div>
@@ -135,9 +135,9 @@
             </div>
         </section>
         <section id="interactive" class="interactive-section">
-            <h2>Interactie: Converteer een Getal naar Binair</h2>
+            <h2>Zet een getal om naar binair</h2>
             <input type="number" id="numberInput" placeholder="Voer een getal in">
-            <button onclick="convertToBinary()">Converteer</button>
+            <button onclick="convertToBinary()">omzetten</button>
             <p id="binaryOutput"></p>
         </section>
     </div>
@@ -148,7 +148,7 @@
         function convertToBinary() {
             const number = document.getElementById('numberInput').value;
             const binary = Number(number).toString(2);
-            document.getElementById('binaryOutput').innerText = `Binaire weergave: ${binary}`;
+            document.getElementById('binaryOutput').innerText = `Binair getal: ${binary}`;
         }
 
        
