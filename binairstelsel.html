@@ -108,21 +108,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welkom</h1>
-    </header>
-    <div class="container">
-        <section>
-            <h2>Over mij</h2>
-            <p>Ik ben Wessel.</p>
-            <p>Dit is mijn website voor mijn projecten.</p>
-        </section>
-        <section>
-            <h2>Mijn Projecten</h2>
-            <p>Dit is mijn pagina over <a href="projects.html">kleuren</a>.</p>
-            <p>Dit is mijn andere pagina over het <a href="binairstelsel.html">binair stelsel</a>. Neem een kijkje op deze pagina.</p>
-        </section>
-        <section>
             <h2>Binairstelsel</h2>
             <h2>Wat is een Binairstelsel?</h2>
             <p>Het binaire stelsel is een wiskundig systeem dat alleen de cijfers 0 en 1 gebruikt. Het is de basis van alle moderne computer- en digitale systemen.</p>
@@ -162,9 +147,6 @@
             document.getElementById('binaryOutput').innerText = `Binaire weergave: ${binary}`;
         }
 
-        document.querySelectorAll('.binary-example div').forEach(element => {
-            element.addEventListener('click', () => {
-                alert(`Je hebt op ${element.innerText} geklikt`);
             });
         });
     </script>
