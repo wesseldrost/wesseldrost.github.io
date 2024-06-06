@@ -60,30 +60,6 @@
             margin: 1rem 0;
         }
 
-        .interactive-section {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .interactive-section input, .interactive-section button {
-            margin: 0.5rem;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        .interactive-section button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .interactive-section button:hover {
-            background-color: #218838;
-        }
-
         footer {
             text-align: center;
             margin-top: 2rem;
@@ -111,7 +87,6 @@
         <section class="topic-section">
             <h2>Sampling en Sample Rate</h2>
             <p>Sampling is het proces waarbij geluid op regelmatige tijdsintervallen wordt gemeten (gesampled) om een digitaal signaal te creëren. De sample rate is het aantal samples per seconde, gemeten in Hertz (Hz). Een hogere sample rate resulteert in betere geluidskwaliteit.</p>
-            </div>
         </section>
         <section class="topic-section">
             <h2>Tekstcompressie</h2>
@@ -128,11 +103,5 @@
     <footer>
         <p><a href="index.html">Home</a></p>
     </footer>
-    <script>
-        function updateSampleRate() {
-            const sampleRate = document.getElementById('sampleRateInput').value;
-            document.getElementById('sampleRateOutput').innerText = `Geselecteerde Sample Rate: ${sampleRate} Hz`;
-        }
-    </script>
 </body>
 </html>
