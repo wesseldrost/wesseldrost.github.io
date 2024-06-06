@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleurmodellen</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .color-models {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .color-model {
+            width: 300px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-sample {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+        }
+
+        .color-sample div {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .color-sample div:hover {
+            transform: scale(1.1);
+        }
+
+        .interactive-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .interactive-section input, .interactive-section button {
+            margin: 0.5rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .interactive-section button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .interactive-section button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kleurmodellen: RGB en CMY-K</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Wat zijn kleurmodellen?</h2>
+            <p>Kleurmodellen zijn methoden om kleuren op een gestructureerde en gestandaardiseerde manier weer te geven. De twee meest voorkomende kleurmodellen zijn RGB en CMY-K.</p>
+        </section>
+        <section>
+            <h2>RGB Kleurmodel</h2>
+            <div class="color-models">
+                <div class="color-model">
+                    <h3>RGB (Rood, Groen, Blauw)</h3>
+                    <p>Het RGB-kleurmodel wordt gebruikt voor schermen zoals tv's, computers en smartphones. Kleuren worden weergegeven door verschillende combinaties van rood, groen en blauw licht.</p>
+                    <div class="color-sample">
+                        <div style="background-color: red;"></div>
+                        <div style="background-color: green;"></div>
+                        <div style="background-color: blue;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>CMY-K Kleurmodel</h2>
+            <div class="color-models">
+                <div class="color-model">
+                    <h3>CMY-K (Cyaan, Magenta, Geel, Zwart)</h3>
+                    <p>Het CMY-K-kleurmodel wordt gebruikt voor drukwerk. Kleuren worden gecreëerd door verschillende combinaties van cyaan, magenta, geel en zwart inkt.</p>
+                    <div class="color-sample">
+                        <div style="background-color: cyan;"></div>
+                        <div style="background-color: magenta;"></div>
+                        <div style="background-color: yellow;"></div>
+                        <div style="background-color: black;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Pixels en Resolutie</h2>
+            <p>Pixels zijn de kleinste eenheden waaruit een digitaal beeld bestaat. Resolutie verwijst naar het aantal pixels in een afbeelding. Hoe hoger de resolutie, hoe scherper en gedetailleerder het beeld.</p>
+        </section>
+        <section class="interactive-section">
+            <h2>Interactie: RGB Kleurmenger</h2>
+            <p>Voer waarden in voor Rood, Groen en Blauw (0-255) om een kleur te creëren.</p>
+            <input type="number" id="redInput" placeholder="Rood (0-255)" min="0" max="255">
+            <input type="number" id="greenInput" placeholder="Groen (0-255)" min="0" max="255">
+            <input type="number" id="blueInput" placeholder="Blauw (0-255)" min="0" max="255">
+            <button onclick="mixColor()">Meng Kleur</button>
+            <p id="colorOutput"></p>
+        </section>
+    </div>
+    <footer>
+        <p><a href="index.html">Home</a></p>
+    </footer>
+    <script>
+        function mixColor() {
+            const red = document.getElementById('redInput').value;
+            const green = document.getElementById('greenInput').value;
+            const blue = document.getElementById('blueInput').value;
+            const color = `rgb(${red}, ${green}, ${blue})`;
+            document.getElementById('colorOutput').innerText = `Gekozen kleur: ${color}`;
+            document.getElementById('colorOutput').style.backgroundColor = color;
+            document.getElementById('colorOutput').style.color = (red < 128 && green < 128 && blue < 128) ? 'white' : 'black';
+            document.getElementById('colorOutput').style.padding = '10px';
+            document.getElementById('colorOutput').style.borderRadius = '5px';
+        }
+    </script>
+</body>
+</html>
