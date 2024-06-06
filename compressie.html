@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressietechnieken</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .topic-section {
+            margin-bottom: 2rem;
+        }
+
+        .topic-section img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+
+        .interactive-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .interactive-section input, .interactive-section button {
+            margin: 0.5rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .interactive-section button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .interactive-section button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Compressietechnieken</h1>
+    </header>
+    <div class="container">
+        <section class="topic-section">
+            <h2>Hoe Beeld en Geluid Worden Opgeslagen</h2>
+            <p>Beeld en geluid worden digitaal opgeslagen door ze om te zetten in binaire gegevens (een reeks nullen en enen). Voor afbeeldingen wordt elk pixel opgeslagen met specifieke kleurwaarden, terwijl geluid wordt opgeslagen als een reeks samples die de amplitude van het geluid op verschillende tijdstippen vertegenwoordigen.</p>
+        </section>
+        <section class="topic-section">
+            <h2>Bitmap- en Vectorafbeeldingen</h2>
+            <h3>Bitmapafbeeldingen</h3>
+            <p>Bitmapafbeeldingen (ook bekend als rasterafbeeldingen) bestaan uit een raster van pixels, waarbij elke pixel een specifieke kleur heeft. Voorbeelden zijn JPEG, PNG en GIF.</p>
+            <img src="https://via.placeholder.com/400x200?text=Bitmapafbeelding" alt="Voorbeeld van een Bitmapafbeelding">
+            <h3>Vectorafbeeldingen</h3>
+            <p>Vectorafbeeldingen gebruiken geometrische vormen zoals punten, lijnen en curves om afbeeldingen te creëren. Deze zijn schaalbaar zonder kwaliteitsverlies. Voorbeelden zijn SVG en EPS.</p>
+            <img src="https://via.placeholder.com/400x200?text=Vectorafbeelding" alt="Voorbeeld van een Vectorafbeelding">
+        </section>
+        <section class="topic-section">
+            <h2>Sampling en Sample Rate</h2>
+            <p>Sampling is het proces waarbij geluid op regelmatige tijdsintervallen wordt gemeten (gesampled) om een digitaal signaal te creëren. De sample rate is het aantal samples per seconde, gemeten in Hertz (Hz). Een hogere sample rate resulteert in betere geluidskwaliteit.</p>
+            <div class="interactive-section">
+                <h3>Interactie: Verander de Sample Rate</h3>
+                <input type="number" id="sampleRateInput" placeholder="Sample Rate (Hz)" min="1" step="1">
+                <button onclick="updateSampleRate()">Update Sample Rate</button>
+                <p id="sampleRateOutput"></p>
+            </div>
+        </section>
+        <section class="topic-section">
+            <h2>Tekstcompressie</h2>
+            <p>Tekstcompressie is het proces van het verminderen van de grootte van een tekstbestand door herhalende patronen en redundantie te verwijderen. Algoritmen zoals Huffman-codering en Lempel-Ziv-Welch (LZW) worden vaak gebruikt voor tekstcompressie.</p>
+        </section>
+        <section>
+            <h2>Speel een Geluidssample</h2>
+            <audio controls>
+                <source src="path/to/sample.mp3" type="audio/mpeg">
+                Uw browser ondersteunt het audio-element niet.
+            </audio>
+        </section>
+    </div>
+    <footer>
+        <p><a href="index.html">Home</a></p>
+    </footer>
+    <script>
+        function updateSampleRate() {
+            const sampleRate = document.getElementById('sampleRateInput').value;
+            document.getElementById('sampleRateOutput').innerText = `Geselecteerde Sample Rate: ${sampleRate} Hz`;
+        }
+    </script>
+</body>
+</html>
