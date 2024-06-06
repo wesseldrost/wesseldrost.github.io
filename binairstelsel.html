@@ -142,7 +142,7 @@
                 </code>
             </div>
             <div class="interactive-section">
-                <h2>Interactie: Converteer een Getal naar Binair</h2>
+                <h2>Zet hier een normaal getal om naar binair</h2>
                 <input type="number" id="numberInput" placeholder="Voer een getal in">
                 <button onclick="convertToBinary()">Omzetten</button>
                 <p id="binaryOutput"></p>
@@ -162,10 +162,6 @@
             const binary = Number(number).toString(2);
             document.getElementById('binaryOutput').innerText = `Binair: ${binary}`;
         }
-
-        document.querySelectorAll('.binary-example div').forEach(element => {
-            element.addEventListener('click', () => {
-                alert(`Je hebt op ${element.innerText} geklikt`);
             });
         });
     </script>
