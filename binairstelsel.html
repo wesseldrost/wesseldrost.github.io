@@ -159,11 +159,13 @@
     <script>
         function convertToBinary() {
             const number = document.getElementById('numberInput').value;
-            const binary = Number(number).toString(2);
-            document.getElementById('binaryOutput').innerText = `Binair: ${binary}`;
+            if (number === "") {
+                document.getElementById('binaryOutput').innerText = "Voer een getal in.";
+            } else {
+                const binary = Number(number).toString(2);
+                document.getElementById('binaryOutput').innerText = `Binair: ${binary}`;
+            }
         }
-            });
-        });
     </script>
 </body>
 </html>
