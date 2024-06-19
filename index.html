@@ -23,6 +23,40 @@
             color: white;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        nav a:hover {
+            background: #444;
+            border-radius: 4px;
         }
 
         .container {
@@ -43,7 +77,7 @@
             margin-bottom: 1rem;
         }
 
-        /* animaties */
+        /* Animaties */
         section {
             opacity: 0;
             transform: translateY(50px);
@@ -55,32 +89,60 @@
             transform: translateY(0);
         }
 
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
 
-        a:hover {
-            text-decoration: underline;
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background: #333;
+                border-radius: 8px;
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 10px 0;
+            }
+
+            nav.show {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Welkom</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="menu">
+            <a href="index.html">Home</a>
+            <a href="kleuren.html">Kleuren</a>
+            <a href="binairstelsel.html">Binaire Stelsel</a>
+            <a href="compressie.html">Compressietechnieken</a>
+            <a href="werkingcomputer.html">Werking van de Computer</a>
+        </nav>
     </header>
     <div class="container">
         <section id="about">
-            <h2>over mij</h2>
-            <p>Ik ben wessel Wessel.</p>
-            <p>deze website is voor mijn projecten</p>
+            <h2>Over Mij</h2>
+            <p>Ik ben Wessel Wessel.</p>
+            <p>Deze website is voor mijn projecten.</p>
         </section>
         <section id="projects">
-            <h2>projecten </h2>
+            <h2>Projecten</h2>
             <p>Dit is mijn pagina over <a href="kleuren.html">kleuren</a>.</p>
-            <p>Dit is mijn andere pagina over het <a href="binairstelsel.html">binaire stelsel</a>. neem hier ook een kijkje</p>
-            <p>Wil je meer informatie over compressie technieken? klik dan <a href="compressie.html">hier</a></p>
-            <p>bekijk hier de werking van de <a href="computer.html">computer</a>.</p>
+            <p>Dit is mijn andere pagina over het <a href="binairstelsel.html">binaire stelsel</a>. Neem hier ook een kijkje.</p>
+            <p>Wil je meer informatie over compressietechnieken? Klik dan <a href="compressie.html">hier</a>.</p>
+            <p>Wil je meer weten over de werking van de computer? Klik dan <a href="werkingcomputer.html">hier</a>.</p>
         </section>
     </div>
     <script>
@@ -103,6 +165,12 @@
                 observer.observe(section);
             });
         });
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
     </script>
 </body>
 </html>
+
